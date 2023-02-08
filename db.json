@@ -10,7 +10,7 @@
       "id": 2,
       "name": "ZZ Plant",
       "image": "./images/zz-plant.jpg",
-      "price": 25.98
+      "price": 24.98
     },
     {
       "id": 3,
@@ -39,7 +39,7 @@
     {
       "name": "Weeping Fig",
       "image": "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcQ9x_xsKciBVkGf9aZy0Yt02i3e9F9sS_eeYiJEO9iCQWZY532-lPvV30sltfpfBqPcJ4iUJo2zQcCtXTQ",
-      "price": 25.64,
+      "price": 21.16,
       "id": 7
     }
   ]

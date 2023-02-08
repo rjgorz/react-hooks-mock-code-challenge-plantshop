@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NewPlantForm from "./NewPlantForm";
+import PlantCard from "./PlantCard";
 import PlantList from "./PlantList";
 import Search from "./Search";
 
@@ -24,6 +25,14 @@ function PlantPage() {
     .then(newPlant => setPlants([...plants, newPlant]));
   }
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:6001/plants/${id}`, { method: 'DELETE' })
+    .then(() => {
+      const updatedPlants = plants.filter(plant => plant.id !== id);
+      setPlants(updatedPlants);
+    })
+  }
+
   const handleSearch = (e) => {
     setSearch(e.target.value);
   }
@@ -36,7 +45,7 @@ function PlantPage() {
     <main>
       <NewPlantForm handleSubmit={handleSubmit} />
       <Search handleSearch={handleSearch} />
-      <PlantList plants={plantsToRender} />
+      <PlantList plants={plantsToRender} handleDelete={handleDelete} />
     </main>
   );
 }
